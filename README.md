@@ -1,4 +1,4 @@
-# Assignment 4
+# Assignment 4 - Part 1
 The archtiecture of the Artificial neural network (ANN) is as mentioned below
 
 <p align = "center"> Architecture </p>
@@ -68,3 +68,17 @@ Number of outputs  - 2 class output<br>
 13) AS the differnetial chain rule becomes mroe complex each differential right from the loss  till the inital weights have been MANUALLY typed and explained and **NOTHING HAS BEEN LEFT TO INTUITION** They are as shown below<br>
 ![final](https://user-images.githubusercontent.com/84949894/119924519-5e687800-bf91-11eb-9a19-9be6bdec02b8.PNG)<br>
 
+14) The values in the equation are substituted with the actual values present in the forward propogation screenshot arriving at the final equation as shown above.BAsed on this the random inputs 0.05 and 0.1 are initialized as i1 and i2 with target value of 0.01 and 0.99 respectively and the losses are calulated based on th equations and formulas mentioned above. <br>
+15) A total of 181 rows are present where in each subseqient row takes the weights the previous row. The new weights are calculated by the formula 
+**new weight = old weight  - learning rate * gradient** <br>
+16) The losses are now calulated for the new set of weights to check if the prediction is as close to the ground truth or not.The network is trained for 181 epochs with different learning rates from  [0.1, 0.2, 0.5, 0.8, 1.0, 2.0]  <br>
+17) The graphical representationf of the same is as follows <br>
+
+![lr0 1n](https://user-images.githubusercontent.com/84949894/119928067-768fc580-bf98-11eb-89a9-de11342267c9.png)
+![lr0 2](https://user-images.githubusercontent.com/84949894/119928069-77285c00-bf98-11eb-80cc-3dce406aa210.png)
+![lr0 5](https://user-images.githubusercontent.com/84949894/119928072-77c0f280-bf98-11eb-86e6-07563187ec4a.png)
+![lr0 8](https://user-images.githubusercontent.com/84949894/119928074-78598900-bf98-11eb-8ac8-ebc8966c5b9e.png)
+![lr1](https://user-images.githubusercontent.com/84949894/119928075-78f21f80-bf98-11eb-82f1-a8ce74966adc.png)
+![lr2](https://user-images.githubusercontent.com/84949894/119928063-7394d500-bf98-11eb-85ee-b2be3bc9b38c.png)
+
+18) As seen above as the learning rate increases the slope of the gradient curve steepens and theres is a sharp fall in the loss. However a balance needs to be struck here as there is a very high chances of the gradient descent overshooting the optima minima and it would keep oscillating and would never reach it eventually. Higher learning rate -> less number of epochs. Lower learning rate -> higher number of epochs.
