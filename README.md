@@ -83,3 +83,29 @@ Number of outputs  - 2 class output<br>
 ![lr2](https://user-images.githubusercontent.com/84949894/119928063-7394d500-bf98-11eb-85ee-b2be3bc9b38c.png)
 
 18) As seen above as the learning rate increases the slope of the gradient curve steepens and theres is a sharp fall in the loss. However a balance needs to be struck here as there is a very high chances of the gradient descent overshooting the optima minima and it would keep oscillating and would never reach it eventually. Higher learning rate -> less number of epochs. Lower learning rate -> higher number of epochs.
+
+
+# Assignment 4 - Part 2
+1) In this model exercise there are a total of 12 models that have been trained trying to reach an accuracy of 99.4%. However the closest possible accuray to be achieved is 99.28% which 0.12% short of the target.
+2) the model architecture is as explained below
+3) Functions to laod the MNIST dataset adn to train the model  are already present in the python notebook. the rationale behind choosing this architecture after 10 experimental models is as mentioned below.
+4) There are 4 convolutional layers preent. The number of channels / features to be extracted using corresponding kernels are kept to a minimum due to the decreased number of parameters that are required in this scenario. The number of channels are sequentially increased from 10 - 20 - 30 - 40 beore  passing it to the output softmax layer. Batch normalization and pooling is done after every layer. <br>
+![cnn](https://user-images.githubusercontent.com/84949894/120039645-e9458300-c022-11eb-91e0-0eb34f536e9f.PNG) <br>
+
+6) Dropout of 0.01 is chosen as the numner of features extracted are very less w.r.t the number of channels, hence losing out on these features wouldnt be ideal and hence a lower drop out value.
+7) Max pooling is done from the second layer, as only very basic features are extracted in the first layer. Some amount of feature extraction  is required before we decide on the importance of the features that needs to go through to the next layer.Hence the max pooling is done from layer 2 onwards.
+8) AFter the fourth convolutional block the image is then passed through a GAP layer which converts the 2 dimensional image into a single dimsensinal vector. But this however there is an extra dimension which is present in this vector which needs to be removed by using the squeeze() function, so that it can be linked tothe next FC layer. The output of the last cnn layer has a dimension of 3x3, hence the size of the GAP layer also needs to be 3x3 to enable Global average. <br>
+![gap](https://user-images.githubusercontent.com/84949894/120040037-843e5d00-c023-11eb-8050-34d9d0e8ff29.PNG) <br>
+9) The dropout and the squeeze functionalities are shown below. <br>
+![dropout and squeeze](https://user-images.githubusercontent.com/84949894/120040299-e7c88a80-c023-11eb-954a-937854ff4e36.PNG) <br>
+11) After this step is done the next step is to pass it through a soft max output which is present in the code already. The losses used here are negative likelihood loss. The optimizer used is SGD which is the gradient descent algorithm. <br>
+12) The model  summary is indicated below. There are a total of 18800 paramters with 20 epochs being the maximum number of epoch. The learning rate is 0.01 with SGD as the optimizer as mentioned above. <br>
+![summary](https://user-images.githubusercontent.com/84949894/120040511-51e12f80-c024-11eb-86e7-f6bf2942981f.PNG) <br>
+13) We reach almost **Near target accuracy** at Epoch 12. <br>
+![epoch12](https://user-images.githubusercontent.com/84949894/120040942-14c96d00-c025-11eb-820f-d052dbce20b7.PNG) <br>
+15) The total number of models trained are 12. We reached our target model at attempt 11 of model building. (Total  12 models built) <br>
+
+
+
+
+
