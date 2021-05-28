@@ -72,6 +72,9 @@ Number of outputs  - 2 class output<br>
 14) The values in the equation are substituted with the actual values present in the forward propogation screenshot arriving at the final equation as shown above.BAsed on this the random inputs 0.05 and 0.1 are initialized as i1 and i2 with target value of 0.01 and 0.99 respectively and the losses are calulated based on th equations and formulas mentioned above. <br>
 15) A total of 181 rows are present where in each subseqient row takes the weights the previous row. The new weights are calculated by the formula 
 **new weight = old weight  - learning rate * gradient** <br>
+![values](https://user-images.githubusercontent.com/84949894/120043786-3e38c780-c02a-11eb-8200-2936cc155e8c.PNG) <br>
+
+
 16) The losses are now calulated for the new set of weights to check if the prediction is as close to the ground truth or not.The network is trained for 181 epochs with different learning rates from  [0.1, 0.2, 0.5, 0.8, 1.0, 2.0]  <br>
 17) The graphical representationf of the same is as follows <br>
 
