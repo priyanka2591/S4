@@ -1,5 +1,6 @@
 # Assignment 4 - Part 1
-The archtiecture of the Artificial neural network (ANN) is as mentioned below
+The archtiecture of the Artificial neural network (ANN) is as mentioned below <br>
+![arch](https://user-images.githubusercontent.com/84949894/119928482-4bf23c80-bf99-11eb-8322-c4c07df2bd19.PNG) <br>
 
 <p align = "center"> Architecture </p>
 Number of inputs  - 2 (i1 and i2) <br>
